@@ -1,7 +1,7 @@
 \documentclass[12pt, oneside]{article}   	
 \usepackage{geometry}                	
 \geometry{a4paper,right=2cm,left=2cm,top=0.5cm,bottom=1cm,includeheadfoot,landscape=false
-%showframe
+,showframe%是否显示边框
 }
  %支持中文
 \usepackage{xeCJK}
@@ -34,22 +34,26 @@
 
 %图表标题设置
 \usepackage{caption}
-\captionsetup{margin=10pt,font=small,labelfont=bf}
-\renewcommand{\tablename}{\normalsize 表}
-\renewcommand{\figurename}{\normalsize 图}
+\captionsetup{margin=10pt,font=small,labelfont=bf} %设置图表标题的格式
+\renewcommand{\tablename}{\normalsize 表}%修改英文table 为中文  表
+\renewcommand{\figurename}{\normalsize 图}%修改英文figure 为中文 图
+
+%目录
+\renewcommand{\contentsname}{目录} %修改英文目录名称为中文  下同
+\renewcommand{\listfigurename}{插\ 图\ 目\ 录}
+\renewcommand{\listtablename}{表\ 格\ 目\ 录} 
 %页眉高度设置
-\setlength{\headheight}{1.5cm}
-\setlength{\headsep}{1mm}
+\setlength{\headheight}{1.5cm}%页眉高度
+\setlength{\headsep}{1mm}%页眉和版心距离
 %边注设置
-\setlength{\marginparsep}{0mm}
-\setlength{\marginparwidth}{0cm}
+\setlength{\marginparsep}{0mm}% 版心和边注的距离
+\setlength{\marginparwidth}{0cm}% 边注的宽度
 %脚注设置
-\setlength{\footskip}{15pt}
-\setlength{\footnotesep}{12pt}
-\setlength{\skip\footins}{2mm}
+\setlength{\footskip}{10mm}%页脚基线到正文基线的距离
+\setlength{\footnotesep}{12pt}%两个注脚之间的距离 
+\setlength{\skip\footins}{2mm}%脚注横线到正文最后一行基线的距离
 %logo相关
 \usepackage{graphicx}
-\usepackage{fancybox}
 \newlength\logolength
 \settoheight{\logolength}{M}
 \newsavebox{\mylogo}
@@ -57,21 +61,17 @@
 
 %页脚页眉
 \usepackage{fancyhdr}
-\fancyhead[R]{测试页面}
-\fancyhead[L]{\usebox{\mylogo}}
-\fancyfoot[L]{}
-\fancyfoot[C]{第 \thepage 页}
-\fancyfoot[R]{}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\usebox{\mylogo}}%页眉左
+\fancyhead[C]{}%页眉中
+\fancyhead[R]{测试页面}%页眉右
+\fancyfoot[L]{}%页脚左
+\fancyfoot[C]{第 \thepage 页}%页脚中
+\fancyfoot[R]{}%页脚右
+\renewcommand{\headrulewidth}{0.4pt}%页眉横线
+\renewcommand{\footrulewidth}{0.4pt}%页脚横线
 
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1.5}%行距
 
-\usepackage{url}
-
-\usepackage{tcolorbox}
-\usepackage{lipsum}
-\tcbuselibrary{skins}
 %文档开始
 \begin{document}
 %封面
@@ -87,20 +87,60 @@
 \end{center} 
 
 \end{titlepage}
-
+%显示目录
+\tableofcontents % 目录
+\newpage
+\listoffigures% 图像目录
+\newpage
+\listoftables% 表格目录
+\newpage
 %正文
 \pagestyle{fancy}
-\section{测试}
-\subsection{测试}
+\section{测试1}
+\subsection{测试11}
 
+\newpage
+\section{测试2}
+\subsection{测试21}
+
+\newpage
+\section{测试3}
+\subsection{测试31}
 \newpage
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.50\textwidth]{pic/logo.png}
-\caption{logo}
+\caption{测试图片1}
 \label{pic1}
 \end{center}
 \end{figure}
-\newpage
+\begin{figure}[h]
+    \begin{center}
+    \includegraphics[width=0.50\textwidth]{pic/logo.png}
+    \caption{测试图片2}
+    \label{pic2}
+    \end{center}
+    \end{figure}
 
+\newpage
+\begin{table}[h]
+	\caption{测试表格1}
+    \label{testtable1}
+	\centering
+	\begin{tabular}{cc}
+		\hline
+		a & a \\
+		b & b
+	\end{tabular}
+\end{table}
+\begin{table}[h]
+    \caption{测试表格2}
+    \label{testtable2}
+	\centering
+	\begin{tabular}{cc}
+		\hline
+		a & a \\
+		b & b
+	\end{tabular}
+\end{table}
 \end{document}  
