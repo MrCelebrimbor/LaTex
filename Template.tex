@@ -1,0 +1,106 @@
+\documentclass[12pt, oneside]{article}   	
+\usepackage{geometry}                	
+\geometry{a4paper,right=2cm,left=2cm,top=0.5cm,bottom=1cm,includeheadfoot,landscape=false
+%showframe
+}
+ %支持中文
+\usepackage{xeCJK}
+%各级标题格式设置
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}[frame]
+{\normalfont}
+{\filright
+\footnotesize
+\enspace 第 \thesection 章 \enspace}
+{8pt}
+{\Large\bfseries\filcenter}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[runin]
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+%各级标题四周距离设置
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}[0pt]
+\titlespacing*{\section} {1em}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}[1em]
+\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}[0pt]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}[0pt]
+\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}[0pt]
+\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}[0pt]
+
+%图表标题设置
+\usepackage{caption}
+\captionsetup{margin=10pt,font=small,labelfont=bf}
+\renewcommand{\tablename}{\normalsize 表}
+\renewcommand{\figurename}{\normalsize 图}
+%页眉高度设置
+\setlength{\headheight}{1.5cm}
+\setlength{\headsep}{1mm}
+%边注设置
+\setlength{\marginparsep}{0mm}
+\setlength{\marginparwidth}{0cm}
+%脚注设置
+\setlength{\footskip}{15pt}
+\setlength{\footnotesep}{12pt}
+\setlength{\skip\footins}{2mm}
+%logo相关
+\usepackage{graphicx}
+\usepackage{fancybox}
+\newlength\logolength
+\settoheight{\logolength}{M}
+\newsavebox{\mylogo}
+\sbox{\mylogo}{\includegraphics[height=1.3cm]{pic/logo.png}}
+
+%页脚页眉
+\usepackage{fancyhdr}
+\fancyhead[R]{测试页面}
+\fancyhead[L]{\usebox{\mylogo}}
+\fancyfoot[L]{}
+\fancyfoot[C]{第 \thepage 页}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\renewcommand{\baselinestretch}{1.5}
+
+\usepackage{url}
+
+\usepackage{tcolorbox}
+\usepackage{lipsum}
+\tcbuselibrary{skins}
+%文档开始
+\begin{document}
+%封面
+\begin{titlepage}
+
+\begin{center}
+{\LARGE 标题 }\\[5cm]
+{\normalsize 测试}\\[3cm]
+\begin{minipage}[t]{3cm}
+\centering
+\end{minipage}\\[3cm]
+{\large 2020年12月12日}
+\end{center} 
+
+\end{titlepage}
+
+%正文
+\pagestyle{fancy}
+\section{测试}
+\subsection{测试}
+
+\newpage
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.50\textwidth]{pic/logo.png}
+\caption{logo}
+\label{pic1}
+\end{center}
+\end{figure}
+\newpage
+
+\end{document}  
