@@ -1,7 +1,7 @@
 \documentclass[12pt, oneside]{article}   	
 \usepackage{geometry}                	
-\geometry{a4paper,right=2cm,left=2cm,top=0.5cm,bottom=1cm,includeheadfoot,landscape=false
-,showframe%是否显示边框
+\geometry{paperheight=15cm,paperwidth=15cm,right=4cm,left=2cm,top=1cm,bottom=1cm,includeheadfoot,landscape=false
+%,showframe%是否显示边框
 }
  %支持中文
 \usepackage{xeCJK}
@@ -9,13 +9,12 @@
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titleformat{\section}[frame]
-{\normalfont}
-{\filright
-\footnotesize
-\enspace 第 \thesection 章 \enspace}
-{8pt}
-{\Large\bfseries\filcenter}
+\titleformat{\section}[hang]
+{\large}
+{
+\enspace 第 \thesection 章}
+{0pt}
+{\Large}
 \titleformat{\subsection}
 {\normalfont\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
@@ -34,7 +33,7 @@
 
 %图表标题设置
 \usepackage{caption}
-\captionsetup{margin=10pt,font=small,labelfont=bf} %设置图表标题的格式
+\captionsetup{aboveskip=0pt,belowskip=0pt,font=small,labelfont=bf} %设置图表标题的格式
 \renewcommand{\tablename}{\normalsize 表}%修改英文table 为中文  表
 \renewcommand{\figurename}{\normalsize 图}%修改英文figure 为中文 图
 
@@ -42,12 +41,14 @@
 \renewcommand{\contentsname}{目录} %修改英文目录名称为中文  下同
 \renewcommand{\listfigurename}{插\ 图\ 目\ 录}
 \renewcommand{\listtablename}{表\ 格\ 目\ 录} 
+
+
 %页眉高度设置
 \setlength{\headheight}{1.5cm}%页眉高度
 \setlength{\headsep}{1mm}%页眉和版心距离
 %边注设置
-\setlength{\marginparsep}{0mm}% 版心和边注的距离
-\setlength{\marginparwidth}{0cm}% 边注的宽度
+\setlength{\marginparsep}{3mm}% 版心和边注的距离
+\setlength{\marginparwidth}{2cm}% 边注的宽度
 %脚注设置
 \setlength{\footskip}{10mm}%页脚基线到正文基线的距离
 \setlength{\footnotesep}{12pt}%两个注脚之间的距离 
@@ -76,7 +77,7 @@
 \begin{document}
 %封面
 \begin{titlepage}
-
+\vspace*{1cm}
 \begin{center}
 {\LARGE 标题 }\\[5cm]
 {\normalsize 测试}\\[3cm]
