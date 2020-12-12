@@ -1,7 +1,10 @@
-\documentclass[12pt, oneside]{article}   	
+\documentclass[12pt]{article}   	
 \usepackage{geometry}                	
-\geometry{paperheight=15cm,paperwidth=15cm,right=4cm,left=2cm,top=1cm,bottom=1cm,includeheadfoot,landscape=false
-%,showframe%是否显示边框
+\geometry{a4paper,
+			%paperheight=25cm,paperwidth=15cm,
+			right=4cm,left=2cm,top=1cm,bottom=1cm,
+			includeheadfoot,landscape=false
+,showframe%是否显示边框
 }
  %支持中文
 \usepackage{xeCJK}
@@ -11,10 +14,11 @@
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
 \titleformat{\section}[hang]
 {\large}
-{
+{%设置label的格式
 \enspace 第 \thesection 章}
-{0pt}
-{\Large}
+{0pt}%label和body的距离
+{\Large}%前命令
+[]%后命令
 \titleformat{\subsection}
 {\normalfont\large\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
@@ -33,7 +37,7 @@
 
 %图表标题设置
 \usepackage{caption}
-\captionsetup{aboveskip=0pt,belowskip=0pt,font=small,labelfont=bf} %设置图表标题的格式
+\captionsetup{font={small,bf},labelfont=bf} %设置图表标题的格式
 \renewcommand{\tablename}{\normalsize 表}%修改英文table 为中文  表
 \renewcommand{\figurename}{\normalsize 图}%修改英文figure 为中文 图
 
@@ -51,12 +55,9 @@
 \setlength{\marginparwidth}{2cm}% 边注的宽度
 %脚注设置
 \setlength{\footskip}{10mm}%页脚基线到正文基线的距离
-\setlength{\footnotesep}{12pt}%两个注脚之间的距离 
-\setlength{\skip\footins}{2mm}%脚注横线到正文最后一行基线的距离
+\setlength{\footnotesep}{12pt}%脚注横线到正文最后一行基线的距离
 %logo相关
 \usepackage{graphicx}
-\newlength\logolength
-\settoheight{\logolength}{M}
 \newsavebox{\mylogo}
 \sbox{\mylogo}{\includegraphics[height=1.3cm]{pic/logo.png}}
 
