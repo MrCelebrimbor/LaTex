@@ -1,61 +1,35 @@
-\documentclass[12pt]{article}   	
-\usepackage{geometry}                	
+\documentclass[
+	%a4paper,
+	12pt]{article}   	
+%设置版面大小和样式
+\usepackage{geometry}   
+             	
 \geometry{a4paper,
 			%paperheight=25cm,paperwidth=15cm,
+			%text={10cm,10cm}
 			right=4cm,left=2cm,top=1cm,bottom=1cm,
-			includeheadfoot,landscape=false
-,showframe%是否显示边框
+			includeheadfoot,%将页脚页眉包括在版心中
+			,showframe%是否显示边框
 }
+
  %支持中文
 \usepackage{xeCJK}
-%各级标题格式设置
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
-\titleformat{\section}[hang]
-{\large}
-{%设置label的格式
-\enspace 第 \thesection 章}
-{0pt}%label和body的距离
-{\Large}%前命令
-[]%后命令
-\titleformat{\subsection}
-{\normalfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}
-{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titleformat{\paragraph}[runin]
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titleformat{\subparagraph}[runin]
-{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
-%各级标题四周距离设置
-\titlespacing*{\chapter} {0pt}{50pt}{40pt}[0pt]
-\titlespacing*{\section} {1em}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}[1em]
-\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}[0pt]
-\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}[0pt]
-\titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1em}[0pt]
-\titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}[0pt]
-
-%图表标题设置
-\usepackage{caption}
-\captionsetup{font={small,bf},labelfont=bf} %设置图表标题的格式
-\renewcommand{\tablename}{\normalsize 表}%修改英文table 为中文  表
-\renewcommand{\figurename}{\normalsize 图}%修改英文figure 为中文 图
-
-%目录
-\renewcommand{\contentsname}{目录} %修改英文目录名称为中文  下同
-\renewcommand{\listfigurename}{插\ 图\ 目\ 录}
-\renewcommand{\listtablename}{表\ 格\ 目\ 录} 
 
 
 %页眉高度设置
 \setlength{\headheight}{1.5cm}%页眉高度
 \setlength{\headsep}{1mm}%页眉和版心距离
+\setlength{\footskip}{10mm}%页脚基线到正文基线的距离
+
 %边注设置
 \setlength{\marginparsep}{3mm}% 版心和边注的距离
 \setlength{\marginparwidth}{2cm}% 边注的宽度
+\setlength{\marginparpush}{2cm}% 边注之间的距离
 %脚注设置
-\setlength{\footskip}{10mm}%页脚基线到正文基线的距离
+
 \setlength{\footnotesep}{12pt}%脚注横线到正文最后一行基线的距离
+
+%设置目录具体内容
 %logo相关
 \usepackage{graphicx}
 \newsavebox{\mylogo}
@@ -72,7 +46,45 @@
 \renewcommand{\headrulewidth}{0.4pt}%页眉横线
 \renewcommand{\footrulewidth}{0.4pt}%页脚横线
 
+
+
+%各级标题格式设置
+\usepackage{titlesec}
+\titleformat{\section}[hang]
+{\large}
+{%设置label的格式
+\enspace 第 \thesection 章}
+{0pt}%label和body的距离
+{\Large}%前命令
+[]%后命令
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%各级标题四周距离设置
+\titlespacing*{\section} {1em}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}[1em]
+\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}[0pt]
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}[0pt]
+
+
+
+%图表标题设置
+\usepackage{caption}
+\captionsetup{font={small,bf},labelfont=bf} %设置图表标题的格式
+\renewcommand{\tablename}{\normalsize 表}%修改英文table 为中文  表
+\renewcommand{\figurename}{\normalsize 图}%修改英文figure 为中文 图
+
+%目录
+\renewcommand{\contentsname}{目录} %修改英文目录名称为中文  下同
+\renewcommand{\listfigurename}{插\ 图\ 目\ 录}
+\renewcommand{\listtablename}{表\ 格\ 目\ 录} 
+
+
+
 \renewcommand{\baselinestretch}{1.5}%行距
+\setlength{\parskip}{12pt}
+\setlength{\parindent}{2cm}
+
 
 %文档开始
 \begin{document}
